@@ -3,3 +3,9 @@
 _BADGES_
 
 _COMMON_
+
+## Installation
+
+```bash
+pip install types-tde4
+```
