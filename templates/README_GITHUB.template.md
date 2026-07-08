@@ -2,6 +2,8 @@
 
 _BADGES_
 
+_LOGO_
+
 _COMMON_
 
 ## Installation

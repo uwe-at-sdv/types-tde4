@@ -1,6 +1,12 @@
 # types-tde4
 
+![License](https://img.shields.io/badge/license-BSD--2--Clause-blue)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+[![PyPI](https://img.shields.io/badge/PyPI-package-3775A9?logo=pypi&logoColor=white)](https://pypi.org/project/types-tde4/)
 
+<p align="center">
+  <img src="img/tde4_pydoc_2.logo.jpg" alt="types-tde4" width="160">
+</p>
 
 This package contains the stubs including Waterloo Docstrings for module ``tde4`` from 3DE4's Python API.
 
