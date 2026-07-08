@@ -11,5 +11,3 @@ _COMMON_
 ```bash
 pip install types-tde4
 ```
-
-
