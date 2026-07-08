@@ -1,8 +1,8 @@
+_LOGO_
+
 # types-tde4
 
 _BADGES_
-
-_LOGO_
 
 _COMMON_
 
