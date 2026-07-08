@@ -1,4 +1,8 @@
+# Changelog
 
+Format:
 
-- 0.1.1 [2026-07-08]: Monir Bugfixes in README.md
+- VERSION [YYYY-MM-DD]: Summary.
+
+- 0.1.1 [2026-07-08]: Minor Bugfixes in README.md
 - 0.1.0 [2026-07-08]: First test
