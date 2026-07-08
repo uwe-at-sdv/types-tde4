@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "types-tde4"
+version = "0.1.0"
+description = "Type stubs for the 3DEqualizer4 Python module tde4."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "BSD-2-Clause"
+authors = [
+	{ name = "Science-D-Visions" }
+]
+keywords = ["3dequalizer", "3de4", "tde4", "typing", "stubs"]
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Developers",
+	"Programming Language :: Python :: 3",
+	"Typing :: Stubs Only"
+]
+
+[project.urls]
+Repository = "https://github.com/uwe-at-sdv/types-tde4"
+
+[tool.setuptools]
+packages = ["tde4-stubs"]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["*.pyi"]
