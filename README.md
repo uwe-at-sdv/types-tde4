@@ -32,14 +32,11 @@ from __future__ import annotations
 
 import tde4
 
-
 def create_ref_camera() -> tde4.CameraID_t:
     return tde4.createCamera("REF_FRAME")
 
-
 def camera_type(camera_id: tde4.CameraID_t) -> tde4.CameraType_t:
     return tde4.getCameraType(camera_id)
-
 
 def maybe_current_camera_type() -> tde4.CameraType_t | None:
     camera_id = tde4.getCurrentCamera()
