@@ -14,7 +14,7 @@ authors = [
 ]
 keywords = ["3dequalizer", "3de4", "tde4", "typing", "stubs"]
 classifiers = [
-	"Development Status :: 3 - Alpha",
+	"Development Status :: 5 - Production/Stable",
 	"Intended Audience :: Developers",
 	"Programming Language :: Python :: 3",
 	"Typing :: Stubs Only"
