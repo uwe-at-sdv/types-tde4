@@ -17,26 +17,29 @@ use the stubs to provide function signatures, type information, auto-completion,
 and inline documentation for ``tde4`` API calls.
 
 The package does not provide a runtime implementation of ``tde4``. Scripts still
-have to run inside 3DEqualizer4, or in an environment where 3DEqualizer4 provides the extension module.
+have to run inside 3DEqualizer4, or in an environment where 3DEqualizer4 provides
+the extension module.
 
+## Use Cases
 
-## Use-cases
+### Static Type Checking with mypy
 
-### Static typechecking (here: ``mypy``)
-
-Once the package is installed, type annotations can be validated using a static type checker.
-Consider the following correctly annotated test script:
+Once the package is installed, type annotations can be validated with a static
+type checker. Consider the following correctly annotated test script:
 
 ```py
 from __future__ import annotations
 
 import tde4
 
+
 def create_ref_camera() -> tde4.CameraID_t:
     return tde4.createCamera("REF_FRAME")
 
+
 def camera_type(camera_id: tde4.CameraID_t) -> tde4.CameraType_t:
     return tde4.getCameraType(camera_id)
+
 
 def maybe_current_camera_type() -> tde4.CameraType_t | None:
     camera_id = tde4.getCurrentCamera()
@@ -45,19 +48,27 @@ def maybe_current_camera_type() -> tde4.CameraType_t | None:
     return camera_type(camera_id)
 ```
 
-When checked with ``mypy`` without package ``types-tde4`` we get:
+Without ``types-tde4`` installed in the Python environment used by ``mypy``, the
+check fails because ``mypy`` cannot find stubs for the extension module:
+
 ```text
 /.../test_types_tde4_simplified.py:3: error: Cannot find implementation or library stub for module named "tde4"  [import-not-found]
 /.../test_types_tde4_simplified.py:3: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
 Found 1 error in 1 file (checked 1 source file)
 ```
 
-After installing ``mypy`` the result is
+After installing ``types-tde4`` into that same Python environment, ``mypy`` can
+resolve the ``tde4`` stubs automatically:
+
 ```text
 Success: no issues found in 1 source file
 ```
 
 ### VS Code / Pylance
+
+With ``types-tde4`` installed, Pylance in VS Code can find signatures and
+docstrings for functions in ``tde4``. Tooltip rendering is not perfect because
+the Waterloo Docstring format is not yet supported by Pylance.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/uwe-at-sdv/types-tde4/main/img/vscode_pylance_tooltip.png" alt="types-tde4">

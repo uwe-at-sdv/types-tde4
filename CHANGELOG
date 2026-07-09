@@ -4,6 +4,7 @@ Format:
 
 - VERSION [YYYY-MM-DD]: Summary.
 
+- 0.1.7 [2026-07-09]: Use-cases in README.md
 - 0.1.6 [2026-07-08]: Packaging details
 - 0.1.5 [2026-07-08]: Release
 - 0.1.4 [2026-07-08]: Packaging details
