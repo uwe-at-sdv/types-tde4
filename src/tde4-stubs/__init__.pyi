@@ -3550,7 +3550,7 @@ def addOptionMenuWidget(requester_id: RequesterID_t, widget_name: WidgetName_t, 
 	"""
 	return None
 
-def addScaleWidget(requester_id: RequesterID_t, widget_name: WidgetName_t, label: str, value_type: NumericType_t, min: float | None = None, max: float | None = None, default_value: float | None = None, mmb_increment: float | None = None) -> None:
+def addScaleWidget(requester_id: RequesterID_t, widget_name: WidgetName_t, label: str, value_type: NumericType_t, min: int | float, max: int | float, default_value: int | float, mmb_increment: int | float | None = None) -> None:
 	r"""
 	Preamble:
 		profile:
@@ -3567,6 +3567,10 @@ def addScaleWidget(requester_id: RequesterID_t, widget_name: WidgetName_t, label
 		requires:
 			The custom requester |var|`requester_id` |must| be created with |func|`tde4.createCustomRequester`.
 			The widget name |var|`widget_name` |should| be unique within the requester.
+			If |var|`value_type` is |value|`"INT"`, arguments |var|`min`, |var|`max`, |var|`default_value`,
+			and |var|`mmb_increment` if specified, |must| be integer values.
+			If |var|`value_type` is |value|`"DOUBLE"`, arguments |var|`min`, |var|`max`, |var|`default_value`,
+			and |var|`mmb_increment` if specified, |must| be numeric values accepted as floating-point values.
 	Parameters:
 		requester_id:
 			Handle returned by |func|`tde4.createCustomRequester()` identifying the dialog.
