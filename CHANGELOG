@@ -4,7 +4,8 @@ Format:
 
 - VERSION [YYYY-MM-DD]: Summary.
 
-- 0.1.9 [2026-07-09]: Bugfix tde4.addScaleWidget docstring
+- 0.1.10 [2026-07-10]: Packaging details
+- 0.1.9 [2026-07-10]: Bugfix tde4.addScaleWidget docstring
 - 0.1.8 [2026-07-09]: README.md details
 - 0.1.7 [2026-07-09]: Use-cases in README.md
 - 0.1.6 [2026-07-08]: Packaging details
