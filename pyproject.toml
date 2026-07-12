@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "types-tde4"
-version = "0.1.10"
+version = "0.1.11"
 description = "Type stubs for the 3DEqualizer4 Python module tde4."
 readme = "README.md"
 requires-python = ">=3.10"
