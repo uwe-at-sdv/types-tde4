@@ -1,5 +1,2 @@
-![License](https://img.shields.io/badge/license-BSD--2--Clause-blue)
-[![Version](https://img.shields.io/badge/version-_VERSION_-orange)](vscode/package.json)
-[![Related](https://img.shields.io/badge/3DE4-3dequalizer.com-brightgreen)](https://3dequalizer.com/)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+_COMMON_
 [![GitHub](https://img.shields.io/badge/GitHub-types_tde4-181717?logo=github)](https://github.com/uwe-at-sdv/types-tde4)

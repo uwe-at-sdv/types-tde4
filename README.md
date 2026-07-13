@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="img/tde4_pydoc_2.logo.jpg" alt="types-tde4" width="160">
+  <img src="https://raw.githubusercontent.com/uwe-at-sdv/types-tde4/main/img/tde4_pydoc_2.logo.jpg" alt="types-tde4" width="160">
 </p>
 
 # types-tde4
 
 ![License](https://img.shields.io/badge/license-BSD--2--Clause-blue)
-[![Version](https://img.shields.io/badge/version-0.1.12-orange)](vscode/package.json)
+[![Version](https://img.shields.io/badge/version-_VERSION_-orange)](vscode/package.json)
 [![Related](https://img.shields.io/badge/3DE4-3dequalizer.com-brightgreen)](https://3dequalizer.com/)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-[![PyPI](https://img.shields.io/badge/PyPI-package-3775A9?logo=pypi&logoColor=white)](https://pypi.org/project/types-tde4/)
+[![GitHub](https://img.shields.io/badge/GitHub-types_tde4-181717?logo=github)](https://github.com/uwe-at-sdv/types-tde4)
 
 This package contains stubs with Waterloo Docstrings for the ``tde4`` module from 3DE4's Python API.
 
