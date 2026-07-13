@@ -12,31 +12,28 @@ usage()
 	echo "Usage: $0 {github,pypi}"
 }
 
-if [[ $# -eq 0 ]]; then
+if [[ $# -ne 1 ]]; then
 	usage
 	exit 1
 fi
-while [[ $# -gt 0 ]]; do
-	case "$1" in
-		github)
-			TARGET="GITHUB"
-			shift
-			;;
-		pypi)
-			TARGET="PYPI"
-			shift
-			;;
-		-h|--help)
-			usage
-			exit 0
-			;;
-		*)
-			usage
-			echo "Unknown option: $1"
-			exit 1
-			;;
-	esac
-done
+
+case "$1" in
+	github)
+		TARGET="GITHUB"
+		;;
+	pypi)
+		TARGET="PYPI"
+		;;
+	-h|--help)
+		usage
+		exit 0
+		;;
+	*)
+		usage
+		echo "Unknown target: $1"
+		exit 1
+		;;
+esac
 
 echo "TARGET: ${TARGET}"
 
@@ -56,6 +53,7 @@ README_LOGO_GITHUB=$(cat "${TEMPLATE_DIR}/README_LOGO_GITHUB.template.md")
 README_PYPI=$(cat "${TEMPLATE_DIR}/README_PYPI.template.md")
 README_GITHUB=$(cat "${TEMPLATE_DIR}/README_GITHUB.template.md")
 
+README_BADGES_COMMON=${README_BADGES_COMMON//_VERSION_/${VERSION}}
 README_BADGES_PYPI=${README_BADGES_PYPI//_VERSION_/${VERSION}}
 README_BADGES_GITHUB=${README_BADGES_GITHUB//_VERSION_/${VERSION}}
 
@@ -71,9 +69,11 @@ README_GITHUB=${README_GITHUB//_LOGO_/${README_LOGO_GITHUB}}
 README_GITHUB=${README_GITHUB//_COMMON_/${README_COMMON}}
 
 
-if [ "${TARGET}" == "GITHUB" ]; then 
-	printf "%s\n" "$README_GITHUB" > "${PACKAGE_DIR}/README.md"
-fi
-if [ "${TARGET}" == "PYPI" ]; then
-	printf "%s\n" "$README_PYPI" > "${PACKAGE_DIR}/README.md"
-fi
+case "${TARGET}" in
+	GITHUB)
+		printf "%s\n" "$README_GITHUB" > "${PACKAGE_DIR}/README.md"
+		;;
+	PYPI)
+		printf "%s\n" "$README_PYPI" > "${PACKAGE_DIR}/README.md"
+		;;
+esac

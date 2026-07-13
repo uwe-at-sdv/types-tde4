@@ -28,28 +28,7 @@ jobs:
         run: python -m pip install --upgrade build
 
       - name: Render PyPI README
-        run: |
-          python - <<'PY'
-          import tomllib
-          from pathlib import Path
-
-          root = Path(".")
-          version = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))["project"]["version"]
-
-          def read_template(name: str) -> str:
-              return (root / "templates" / name).read_text(encoding="utf-8")
-
-          readme_common = read_template("README_COMMON.template.md")
-          readme_badges = read_template("README_BADGES_PYPI.template.md").replace("_VERSION_", version)
-          readme_logo = read_template("README_LOGO_PYPI.template.md")
-          readme = read_template("README_PYPI.template.md")
-
-          readme = readme.replace("_BADGES_", readme_badges)
-          readme = readme.replace("_LOGO_", readme_logo)
-          readme = readme.replace("_COMMON_", readme_common)
-
-          (root / "README.md").write_text(readme.rstrip() + "\n", encoding="utf-8")
-          PY
+        run: bash templates/instantiate_readme.sh pypi
 
       - name: Build package
         run: |
