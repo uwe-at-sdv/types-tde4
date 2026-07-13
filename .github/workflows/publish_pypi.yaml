@@ -1,0 +1,60 @@
+name: Publish to PyPI
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Build and publish types-tde4
+    runs-on: ubuntu-latest
+    environment: env_pypi
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build tooling
+        run: python -m pip install --upgrade build
+
+      - name: Render PyPI README
+        run: |
+          python - <<'PY'
+          import tomllib
+          from pathlib import Path
+
+          root = Path(".")
+          version = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))["project"]["version"]
+
+          def read_template(name: str) -> str:
+              return (root / "templates" / name).read_text(encoding="utf-8")
+
+          readme_common = read_template("README_COMMON.template.md")
+          readme_badges = read_template("README_BADGES_PYPI.template.md").replace("_VERSION_", version)
+          readme_logo = read_template("README_LOGO_PYPI.template.md")
+          readme = read_template("README_PYPI.template.md")
+
+          readme = readme.replace("_BADGES_", readme_badges)
+          readme = readme.replace("_LOGO_", readme_logo)
+          readme = readme.replace("_COMMON_", readme_common)
+
+          (root / "README.md").write_text(readme.rstrip() + "\n", encoding="utf-8")
+          PY
+
+      - name: Build package
+        run: |
+          rm -rf build dist src/*.egg-info
+          python -m build
+
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

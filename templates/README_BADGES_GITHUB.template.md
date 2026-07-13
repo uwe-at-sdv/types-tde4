@@ -1,5 +1,5 @@
 ![License](https://img.shields.io/badge/license-BSD--2--Clause-blue)
 [![Version](https://img.shields.io/badge/version-_VERSION_-orange)](vscode/package.json)
-[![3DEqualizer4](https://img.shields.io/badge/3DE4-3dequalizer.com-brightgreen)](https://3dequalizer.com/)
+[![Related](https://img.shields.io/badge/3DE4-3dequalizer.com-brightgreen)](https://3dequalizer.com/)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 [![PyPI](https://img.shields.io/badge/PyPI-package-3775A9?logo=pypi&logoColor=white)](https://pypi.org/project/types-tde4/)
