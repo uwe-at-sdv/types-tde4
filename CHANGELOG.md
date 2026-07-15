@@ -6,6 +6,8 @@ Format:
 	* Summary.
 
 #----- extend here --------------------------------------------#
+- 0.1.14 [2026-07-15]:
+	* Packaging details
 - 0.1.13 [2026-07-13]:
 	* Automizing README generation
 - 0.1.12 [2026-07-13]:

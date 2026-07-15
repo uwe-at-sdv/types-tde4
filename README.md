@@ -5,8 +5,9 @@
 # types-tde4
 
 ![License](https://img.shields.io/badge/license-BSD--2--Clause-blue)
-[![Version](https://img.shields.io/badge/version-0.1.13-orange)](pyproject.toml)
+[![Version](https://img.shields.io/badge/version-0.1.14-orange)](pyproject.toml)
 [![Related](https://img.shields.io/badge/3DE4-3dequalizer.com-brightgreen)](https://3dequalizer.com/)
+[![Related](https://img.shields.io/badge/WTRL-Waterloo--Docstrings-932725)](github.com/uwe--at--sdv/sdv_doc_waterloo)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 [![PyPI](https://img.shields.io/badge/PyPI-package-3775A9?logo=pypi&logoColor=white)](https://pypi.org/project/types-tde4/)
 
